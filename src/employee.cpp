@@ -32,6 +32,18 @@ void Employee::setName(const std::string inputName)
 }
 
 
+void Employee::setDateOfBirth(const std::string inputDate)
+{
+    dateOfBirth = inputDate;
+    return;
+}
+
+void Employee::addWage(double wage)
+{
+    wages.push_back(wage);
+}
+
+
 double Employee::getAverageWages()
 {
     if (wages.size() < 1)
@@ -45,7 +57,7 @@ double Employee::getAverageWages()
 
 double Employee::getTotalWages()
 {
-    if (totalWages < 0)
+    if (totalWages < 0.1)
     {
         return totalWages;
     }
@@ -96,7 +108,28 @@ std::istream& operator>> (std::istream& inputStream, Employee& employee)
         std::getline(lineStream, token, ';');
         employee.addWage(std::stod(token));        
     }
+    return inputStream;
+}
+
+Employee operator+ (Employee& a, Employee& b)
+{
+    return a + b;
+//    if (a.getName() < b.getName())
+//        return true;
+//    else if(b.getName() < a.getName())
+//        return false;
+
+//    if (a.getAverageWages() < b.getAverageWages())
+//    {
+//        return true;
+//    }
+//    else if (b.getAverageWages() < a.getAverageWages())
+//    {
+//        return false;
+//    }
     
+//    // Equal
+//    return false;
 }
 
 

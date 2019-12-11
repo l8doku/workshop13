@@ -7,6 +7,7 @@
 
 
 
+
 class Employee
 {
 private:
@@ -38,5 +39,7 @@ public:
 std::ostream& operator << (std::ostream &outputStream, const Employee &a);
 
 std::istream& operator>> (std::istream& inputStream, Employee& employee);
+
+bool operator< (Employee& a, Employee& b);
 
 #endif // EMPLOYEE_H
