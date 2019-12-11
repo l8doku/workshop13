@@ -23,11 +23,14 @@ public:
 
     std::string getName() const;
     void setName(const std::string inputName);
-
     std::string getBirthDate() const;
-    
     std::vector<double> getWagesList() const;
 
+
+    void setDateOfBirth(const std::string inputName);
+    void addWage(double);
+    
+    
     double getAverageWages();
     double getTotalWages();
 };

@@ -89,12 +89,12 @@ std::istream& operator>> (std::istream& inputStream, Employee& employee)
     employee.setName(token);
     
     std::getline(lineStream, token, ';');
-    employee.dateOfBirth = token;
+    employee.setDateOfBirth(token);
     
     while(!lineStream.eof())
     {
         std::getline(lineStream, token, ';');
-        employee.wages.push_back(token);        
+        employee.addWage(std::stod(token));        
     }
     
 }
