@@ -5,12 +5,18 @@
 #include <vector>
 #include <iostream>
 
+
+
 class Employee
 {
+private:
     std::string name;
     std::string dateOfBirth;
     std::vector<double> wages;
     double totalWages;
+    
+
+    
 public:
     Employee();
     Employee(std::string name, std::string dateOfBirth, std::vector<double> wages);

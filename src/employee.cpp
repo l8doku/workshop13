@@ -1,4 +1,7 @@
+#include <sstream>
+
 #include "employee.h"
+
 
 Employee::Employee()
 {
@@ -73,5 +76,28 @@ std::ostream& operator << (std::ostream &outputStream, const Employee &a)
     }
     return outputStream;
 }
+
+
+std::istream& operator>> (std::istream& inputStream, Employee& employee)
+{
+    std::string line;
+    std::getline(inputStream, line);
+    std::stringstream lineStream(line);
+    std::string token;
+    
+    std::getline(lineStream, token, ';');
+    employee.setName(token);
+    
+    std::getline(lineStream, token, ';');
+    employee.dateOfBirth = token;
+    
+    while(!lineStream.eof())
+    {
+        std::getline(lineStream, token, ';');
+        employee.wages.push_back(token);        
+    }
+    
+}
+
 
 
