@@ -57,7 +57,7 @@ double Employee::getAverageWages()
 
 double Employee::getTotalWages()
 {
-    if (totalWages < 0.1)
+    if (totalWages < -0.1)
     {
         return totalWages;
     }
@@ -113,7 +113,7 @@ std::istream& operator>> (std::istream& inputStream, Employee& employee)
 
 bool operator< (Employee& a, Employee& b)
 {
-
+    
     if (a.getName() < b.getName())
         return true;
     else if(b.getName() < a.getName())

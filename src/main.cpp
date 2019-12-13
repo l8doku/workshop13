@@ -1,8 +1,22 @@
 #include <iostream>
 #include <sstream>
+#include <fstream>
 #include "employee.h"
 //        employee.cpp
 //        main.cpp
+
+
+std::vector<Employee> getDataEmployees(std::istream& inputStream)
+{
+    std::vector<Employee> emplData;
+    Employee emplCurrent;
+    while(!inputStream.eof())
+    {
+        inputStream >> emplCurrent;
+        emplData.push_back(emplCurrent);        
+    }
+    return emplData;
+}
 
 
 int main()
@@ -14,18 +28,18 @@ int main()
     
     std::cout << employeeJohn;
 
-    Employee employeeDave;
-    std::string inputDataEmployee = "John;13.04.1989;1.5;1.9\n";
-    std::stringstream inputStreamEmployee(inputDataEmployee);
-    inputStreamEmployee >> employeeDave;
-    std::cout << employeeDave << std::endl;
-    if(employeeDave < employeeJohn)
+    std::ifstream file("../workshop13/data/employees.txt");
+    std::vector<Employee> employees = getDataEmployees(file);
+    std::cout << employees[0] << std::endl;
+
+    
+    if(employees[0] < employeeJohn)
     {
         std::cout << "John2 is lower sorted than John" << std::endl;
     }
     else
     {
-        std::cout << "John2 is not lower sorted than John" << std::endl;
+        std::cout << "John2 is higher sorted than John (or is equal to him)" << std::endl;
     }
     return 0;
 }
