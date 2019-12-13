@@ -8,8 +8,8 @@ Employee::Employee()
     
 }
 
-Employee::Employee(std::string name, std::string dateOfBirth, std::vector<double> wages):
-    name(name), dateOfBirth(dateOfBirth), wages(wages)
+Employee::Employee(std::string inputName, std::string dateOfBirth, std::vector<double> wages):
+    name(inputName), dateOfBirth(dateOfBirth), wages(wages)
 {
     
 }
@@ -40,7 +40,7 @@ void Employee::setDateOfBirth(const std::string inputDate)
 
 void Employee::addWage(double wage)
 {
-    wages.push_back(wage);
+    this->wages.push_back(wage);
 }
 
 
@@ -132,5 +132,15 @@ bool operator< (Employee& a, Employee& b)
     return false;
 }
 
+Employee Employee::makeEmployee(std::string name, std::string dateOfBirth, int wagesNum)
+{
+    std::vector<double> wages(wagesNum);
+    for (int i = 0; i < wagesNum; ++i)
+    {
+        wages[i] = 0.1 * i;
+    }
+    Employee employee(name, dateOfBirth, wages);
+    return employee;
+}
 
 

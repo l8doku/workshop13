@@ -22,29 +22,36 @@ void printAllEmployees(std::ostream& outputStream, std::vector<Employee> data)
     // TODO Write your code here
 }
 
+// TASK: combine tasks 8 and 10 from the PDF
+// Create several employees from file
+// Output them
+// Sort them (the operator is already overloaded)
+// Output them again
+
+
+
+
 
 int main()
 {
-    std::string firstName = "John";
-    std::string firstDateOfBirth = "13.04.1990";
-    std::vector<double> firstWages = {1.5, 10.2, 11.9, 4.9};
-    Employee employeeJohn(firstName, firstDateOfBirth, firstWages);
-    
-    std::cout << employeeJohn;
-
-    std::ifstream file("../workshop13/data/employees.txt");
+    std::ifstream file("/home/georgii/WORK/DSBA/repositories/workshop13/workshop13/data/employees.txt");
     std::vector<Employee> employees = getDataEmployees(file);
-    std::cout << employees[0] << std::endl;
-
-    std::cout << "=======================";
+    
     printAllEmployees(std::cout, employees);
-    if(employees[0] < employeeJohn)
-    {
-        std::cout << "John2 is lower sorted than John" << std::endl;
-    }
-    else
-    {
-        std::cout << "John2 is higher sorted than John (or is equal to him)" << std::endl;
-    }
+    std::cout << "=======================\n";
+    
+    
+    Employee test = Employee::makeEmployee("test", "00.00.0000", 6);
+    
+
     return 0;
 }
+
+
+
+
+
+
+
+
+

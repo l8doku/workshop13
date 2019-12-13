@@ -34,6 +34,8 @@ public:
     
     double getAverageWages();
     double getTotalWages();
+    
+    static Employee makeEmployee(std::string name, std::string dateOfBirth, int wagesNum);
 };
 
 std::ostream& operator << (std::ostream &outputStream, const Employee &a);
