@@ -10,12 +10,16 @@ std::vector<Employee> getDataEmployees(std::istream& inputStream)
 {
     std::vector<Employee> emplData;
     Employee emplCurrent;
-    while(!inputStream.eof())
+    while(inputStream >> emplCurrent)
     {
-        inputStream >> emplCurrent;
         emplData.push_back(emplCurrent);        
     }
     return emplData;
+}
+
+void printAllEmployees(std::ostream& outputStream, std::vector<Employee> data)
+{
+    // TODO Write your code here
 }
 
 
@@ -32,7 +36,8 @@ int main()
     std::vector<Employee> employees = getDataEmployees(file);
     std::cout << employees[0] << std::endl;
 
-    
+    std::cout << "=======================";
+    printAllEmployees(std::cout, employees);
     if(employees[0] < employeeJohn)
     {
         std::cout << "John2 is lower sorted than John" << std::endl;
