@@ -111,25 +111,25 @@ std::istream& operator>> (std::istream& inputStream, Employee& employee)
     return inputStream;
 }
 
-Employee operator+ (Employee& a, Employee& b)
+bool operator< (Employee& a, Employee& b)
 {
-    return a + b;
-//    if (a.getName() < b.getName())
-//        return true;
-//    else if(b.getName() < a.getName())
-//        return false;
 
-//    if (a.getAverageWages() < b.getAverageWages())
-//    {
-//        return true;
-//    }
-//    else if (b.getAverageWages() < a.getAverageWages())
-//    {
-//        return false;
-//    }
+    if (a.getName() < b.getName())
+        return true;
+    else if(b.getName() < a.getName())
+        return false;
+
+    if (a.getAverageWages() < b.getAverageWages())
+    {
+        return true;
+    }
+    else if (b.getAverageWages() < a.getAverageWages())
+    {
+        return false;
+    }
     
-//    // Equal
-//    return false;
+    // Equal
+    return false;
 }
 
 
