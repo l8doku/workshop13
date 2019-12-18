@@ -1,2 +1,12 @@
 John Harley;13.04.1989;1.5;1.9
 Dave English;01.04.1990;10.1;1.9;6.4
+Aminah Mccoy;01.04.1990;9;4;9;5;8;6;0
+Sanah Wu;01.04.1990;3;1;3;3;2
+Asiyah Potter;01.04.1990;2;8;10;10;0;5;9;7;0;4
+Mari Gibson;01.04.1990;2;10;4;4;2;6
+Collette Schmidt;01.04.1990;5;2;9;8;2
+Ksawery Richard;01.04.1990;0;2;3;2;1
+Kayleigh Gallagher;01.04.1990;2;6;4;7;8;6;6;6
+Saara Joseph;01.04.1990;5;1;8
+Montana Guthrie;01.04.1990;2;2;10;1;7
+Celeste Swan;01.04.1990;3;4;5;3;4;1;8

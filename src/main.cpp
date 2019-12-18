@@ -21,7 +21,7 @@ std::vector<Employee> getDataEmployees(std::istream& inputStream)
 void printAllEmployees(std::ostream& outputStream, std::vector<Employee> data)
 {
     for (Employee employee : data)
-        ;
+        outputStream << employee;
     // TODO Write your code here
 }
 
@@ -34,7 +34,7 @@ void printAllEmployees(std::ostream& outputStream, std::vector<Employee> data)
 
 bool wageCompare(Employee& a, Employee& b)
 {
-    return a.getAverageWages() < b.getAverageWages();
+    return a.getAverageWages() > b.getAverageWages();
 }
 
 int main()

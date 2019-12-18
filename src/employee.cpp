@@ -108,6 +108,7 @@ std::istream& operator>> (std::istream& inputStream, Employee& employee)
         std::getline(lineStream, token, ';');
         employee.addWage(std::stod(token));        
     }
+    lineStream.clear();
     return inputStream;
 }
 
