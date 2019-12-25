@@ -89,9 +89,17 @@ std::ostream& operator << (std::ostream &outputStream, const Employee &a)
     return outputStream;
 }
 
+void Employee::clear()
+{}
+void Employee::clearWages()
+{
+    // clear wages here
+}
 
 std::istream& operator>> (std::istream& inputStream, Employee& employee)
 {
+    employee.clear();
+//    employee.wages.clear();
     std::string line;
     std::getline(inputStream, line);
     std::stringstream lineStream(line);
@@ -106,9 +114,9 @@ std::istream& operator>> (std::istream& inputStream, Employee& employee)
     while(!lineStream.eof())
     {
         std::getline(lineStream, token, ';');
-        employee.addWage(std::stod(token));        
+     // employee.wages.push_back(std::stod(token));
+        employee.addWage(std::stod(token));
     }
-    lineStream.clear();
     return inputStream;
 }
 

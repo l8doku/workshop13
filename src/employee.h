@@ -35,6 +35,9 @@ public:
     double getAverageWages();
     double getTotalWages();
     
+    void clear();
+    void clearWages();
+    
     static Employee makeEmployee(std::string name, std::string dateOfBirth, int wagesNum);
 };
 
